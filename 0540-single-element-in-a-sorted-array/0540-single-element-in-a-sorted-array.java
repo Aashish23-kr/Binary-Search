@@ -19,3 +19,10 @@ class Solution {
         return nums[left];
     }
 }
+
+//Time Complexity (TC)
+//O(log n)
+// In each iteration, the search space is reduced by half, just like standard binary search.
+// Space Complexity (SC)
+// O(1)
+// Only a few variables (left, right, mid) are used, with no extra data structures.
