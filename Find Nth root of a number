@@ -1,0 +1,29 @@
+Time Complexity: O(logM), we search for every possible number from 1 to M to check if it is the Nth root.
+Space Complexity: O(1), constant additional space is used.
+
+class Main {
+    public int NthRoot(int n, int m){
+        int left =1, right = m;
+        while(left <= right){
+            
+            int mid = left + (right-left)/2;
+            int ans =1;
+            
+            for(int i=0; i<n; i++){
+                ans *= mid;
+                if(ans>m) break;
+            }
+            if(ans == m) return mid;
+            if(ans<m){
+                left = mid+1;
+            }else{
+                right = mid-1;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        Main obj = new Main();
+        System.out.println(obj.NthRoot(4,69));
+    }
+}
