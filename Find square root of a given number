@@ -1,0 +1,29 @@
+Time Complexity: O(log n)
+Space Complexity: O(1)
+
+class Main {
+    
+    public int floorSqrt(int n) {
+      int left =0, right = n/2;
+      int ans =0;
+      
+      while(left <= right){
+          int mid = left + (right - left)/2;
+          if((long)mid*mid == n){
+              return mid;
+          }else if((long)mid*mid > n){
+              right = mid-1;
+          }else{
+              left = mid+1;
+              ans = mid;
+          }
+      }
+      return ans;
+    }
+
+    public static void main(String[] args) {
+        int n = 57658478;
+        Main ans = new Main();
+        System.out.println(ans.floorSqrt(n));
+    }
+}
